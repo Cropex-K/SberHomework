@@ -1,6 +1,7 @@
 package com.zoo;
 
 import com.zoo.animal.Aviary;
+import com.zoo.animal.Bear;
 import com.zoo.animal.Lama;
 import com.zoo.animal.Tiger;
 import com.zoo.exception.SomeException2;
@@ -32,14 +33,17 @@ public class Main {
         Tiger tiger3 = new Tiger();
         Lama lama2 = new Lama(); //первая добавлена выше
 
-        aviary1.add(tiger1);
-        aviary1.add(tiger2);
-        aviary1.add(tiger3); //ошибка, так как место закончилось
 
-        aviary2.add(lama1);
-        aviary2.add(lama2);
-        aviary2.add(lama2); //ошибка, так как это животное уже там есть
+        tiger1.addToAviary("Tigers", aviary1);
+        tiger2.addToAviary("Tigers", aviary1);
+        tiger3.addToAviary("Tigers", aviary1); //ошибка, так как место закончилось
 
-        //нельзя добавить животное в несуществующий вольер, идея не даст :)
+        lama1.addToAviary("Lamas", aviary2);
+        lama2.addToAviary("Lamas", aviary2);
+        lama2.addToAviary("Lamas", aviary2); //ошибка, так как это животное уже там есть
+
+        Aviary aviary3 = new Aviary("Bear", 2);
+        Bear bear = new Bear();
+        bear.addToAviary("Tigers", aviary3); //ошибка, так как такого вольера не существует
     }
 }

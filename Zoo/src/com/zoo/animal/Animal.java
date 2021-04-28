@@ -46,5 +46,14 @@ public abstract class Animal {
         }
     }
 
+    public void addToAviary(String nameOfAviary, Aviary aviary) throws SomeException2, WrongDataException {
+        if (nameOfAviary.equals(aviary.getName())) {
+            aviary.add(this);
+        }
+        else {
+            throw new WrongDataException();
+        }
+    }
+
 }
 

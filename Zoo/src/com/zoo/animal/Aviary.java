@@ -38,7 +38,7 @@ public class Aviary {
         return cage;
     }
 
-    public void add(Animal animal) throws SomeException2, WrongDataException {
+    protected void add(Animal animal) throws SomeException2, WrongDataException {
 
         if (cage.size()==count){
             throw new SomeException2();
@@ -53,7 +53,8 @@ public class Aviary {
 
     }
 
-    public void delete(Animal animal){
+    protected void delete(Animal animal){
         this.cage.remove(animal);
     }
+
 }
