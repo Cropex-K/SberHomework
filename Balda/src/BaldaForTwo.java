@@ -64,11 +64,14 @@ public class BaldaForTwo {
 
         if (wordHistory1Player.size() > wordHistory2Player.size()) {
             System.out.println("Первый игрок выиграл!");
+            
         } else if (wordHistory1Player.size() < wordHistory2Player.size()) {
             System.out.println("Второй игрок выиграл!");
+            
         } else {
             System.out.println("Ничья");
         }
+        
         System.out.println("1 игрок составил " + wordHistory1Player.size() + " слов(а)");
         System.out.println("Слова: " + String.join(", ", wordHistory1Player));
         System.out.println("2 игрок составил " + wordHistory2Player.size() + " слов(а)");
